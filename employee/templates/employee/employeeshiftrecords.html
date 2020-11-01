@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+ {% if employeerecords %}
+           
+    
+    <div class="avt-post-wrapper section">
+        
+        <div class="container">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead class="bg-secondary">
+                    <tr>
+
+                <td>##</td>
+                <th>EMPLOYEE</th>
+                <th>SHIFT</th>
+                <th>DATE</th>
+                <th>WEEK</th>
+                <th>MONTH</th>
+                <th>ACTION1</th>
+                <th>ACTION2></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for records in employeerecords%}
+                  <tr>
+                    <td>{{ records.id }}</td>
+                    <td>{{ records.employee }}</td>
+                    <td>{{ records.shift }}</td>
+                    <td>{{ records.date }}</td>
+                    <td>{{ records.week }}</td>
+                    <td>{{ records.month }}</td>
+                    <td><a href="{% url 'home'%}" class="btn btn-primary btn-lg" style="background-color:indigo;">edit</a></td>
+                    <td><a href="{% url 'home'%}" class="btn btn-danger btn-lg">delete</a></td>
+                </tr>
+                  {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>FIRSTNAME</th>
+                        <th>LASTNAME</th>
+                        <th>EMAIL</th>
+                        <th>DEPARTMENT</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+            
+        {% else %}
+            <strong>No employees yet</strong>
+        {% endif %}
+
+{%endblock%}

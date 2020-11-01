@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="page">
+    <div class="avt-post-wrapper section">
+    <div class="container" style="background-color:indigo;">
+      <div class="jumbotron" style="background-color:white;border-radius:83px;">
+       <div class="row">
+        <div class="col-xs-10">
+          <form method="POST">
+
+            {%csrf_token%}
+
+              <fieldset style=" border-color: indigo;border-style: solid;">
+              <legend>Add Employee</legend>
+              <div class="product-section avtpost-fields">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="post-inner">
+                      <div class="row form-group">
+                        <label class="col-md-4">First Name: </label>
+                        <div class="col-md-8">
+                          {{ employees.firstname|as_crispy_field}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="post-inner select-cat">
+                      <div class="row form-group">
+                        <label class="col-md-4">Last Name: </label>
+                        <div class="col-md-8">
+                            {{employees.lastname|as_crispy_field}}
+                        </div>
+                      </div>
+                    </div>
+                    <br><br>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="post-inner select-cat">
+                      <div class="row form-group">
+                        <label class="col-md-4">Email: </label>
+                        <div class="col-md-8">
+                            {{employees.email|as_crispy_field}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="post-inner">
+                      <div class="row form-group">
+                        <label class="col-md-4">Department: </label>
+                        <div class="col-md-8">
+                            {{employees.department|as_crispy_field}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            
+                  <div class="col-md-6">
+                    <div class="post-inner">
+                      <div class="row form-group">
+                        <div class="col-md-8">
+                            {{employees.onleave|as_crispy_field}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="submit-section">
+                <br>
+                <div class="submit-button">
+                  <button class="btn btn-primary btn-lg" style="background-color:indigo;" type="submit">Create</button>
+                </div>
+              </div>
+            </fieldset>
+      
+          </form>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}
+

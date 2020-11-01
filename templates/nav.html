@@ -1,0 +1,111 @@
+<header id="header" class="clearfix">
+  <nav class="navbar navbar-default">
+    <div class="topbar">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <ul class="list-inline">
+            <li>
+                  <strong
+                    ><a href="{% url 'employees'%}" 
+                       style="font-size:22px;">SHIFT MANAGEMENT SYSTEM</a
+                    ></strong
+                  >
+                </li>
+              <li>
+                <span style="color: white !important"
+                  ><i class="fa fa-envelope-o text-white"></i
+                ></span>
+                
+              </li>
+              <li>
+                <span style="color: white !important"
+                  ><i class="fa fa-phone"></i
+                ></span>
+                +263 784 797 749
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-8">
+            <div class="user-section">
+            {% if user.is_authenticated %}
+              <ul class="list-line">
+
+                
+                <li>
+                  <strong
+                    ><a href="{% url 'employees'%}"
+                      >EMPLOYEES</a
+                    ></strong
+                  >
+                </li>
+                <li>
+                  <strong
+                    ><a href="{% url 'departments'%}" 
+                      >DEPARTMENTS</a
+                    ></strong
+                  >
+                </li>
+                    <li>
+                  <strong
+                    ><a href="{% url 'shiftrecords'%}" 
+                      >SHIFTS</a
+                    ></strong
+                  >
+                </li>
+                
+                 <li>
+                  <strong
+                    ><a href="{% url 'employeeshiftrecords'%}" 
+                      >EMLOYEE SHIFTS</a
+                    ></strong
+                  >
+                </li>
+                 <li>
+                  <strong
+                    ><a href="{% url 'logout'%}" 
+                      >LOGOUT</a
+                    ></strong
+                  >
+                </li>
+                
+            
+              </ul>
+              {% else %}
+              <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
+                data-toggle="dropdown">ACCOUNTS
+                <span class="caret"></span></a>
+               <ul class="dropdown-menu" style="background-color:indigo;">
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+              </ul>
+              </li>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#navbar-collapse"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'home'%}">
+          <!--<img class="img-responsive" src="/static/images/logo.png" alt="Logo">-->
+        </a>
+      </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
